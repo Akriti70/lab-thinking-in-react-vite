@@ -1,0 +1,23 @@
+// src/components/SearchBar.jsx
+function SearchBar({ searchText, onSearchChange, inStockOnly, onInStockChange }) {
+  return (
+    <form>
+      <input
+        type="text"
+        placeholder="Search..."
+        value={searchText}
+        onChange={(e) => onSearchChange(e.target.value)}
+      />
+      <p>
+        <input
+          type="checkbox"
+          checked={inStockOnly}
+          onChange={(e) => onInStockChange(e.target.checked)}
+        />{" "}
+        Only show products in stock
+      </p>
+    </form>
+  );
+}
+
+export default SearchBar;
